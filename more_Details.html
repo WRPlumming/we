@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W&R Plumbing LTD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1b1b;
+            color: #f08800;
+        }
+        header {
+            background-color: #333;
+            color: #f08800;
+            text-align: center;
+            padding: 1rem;
+        }
+        h1 {
+            margin: 0;
+            animation: fadeInDown 1s ease-out;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+        .section {
+            background-color: #333;
+            border-radius: 5px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px rgba(240,136,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+            background-color: #1a1b1b;
+        }
+        .section h2 {
+            color: #f08800;
+            border-bottom: 2px solid #f08800;
+            padding-bottom: 0.5rem;
+        }
+        .section p {
+            color: #f08800;
+        }
+        .animated {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://wrplumming.netlify.app/" class="back-button">
+            <i class="arrow-left"></i>
+            Back to Home
+        </a>
+        <style>
+            .back-button {
+                float: left;
+                margin-right: 10px;
+                background-color: #333;
+                color: #f08800;
+                border: 2px solid #f08800;
+                padding: 10px 15px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+            }
+            .back-button:hover {
+                background-color: #f08800;
+                color: #333;
+            }
+            .arrow-left {
+                border: solid #f08800;
+                border-width: 0 3px 3px 0;
+                display: inline-block;
+                padding: 3px;
+                transform: rotate(135deg);
+                -webkit-transform: rotate(135deg);
+                margin-right: 10px;
+                transition: all 0.3s ease;
+            }
+            .back-button:hover .arrow-left {
+                border-color: #333;
+            }
+        </style>
+        <h1>W&R Plumbing LTD</h1>
+    </header>
+    <div class="container">
+        <section class="section animated">
+            <h2>About Us</h2>
+            <p>Hello! W&R Plumming LTD here. A Plumming Company! Hello!  
+                where integrity meets expertise.
+                With 9 years of dedicated service,
+                 we pride ourselves on delivering top-notch plumbing solutions tailored to your needs.
+                  Our team of skilled professionals is committed to transparency
+                  , reliability, and quality craftsmanship,
+                   ensuring your peace of mind with every project.
+                    From routine maintenance to emergency repairs,
+                     trust us to keep your plumbing running smoothly.
+                      Your satisfaction is our guarantee.</p>
+        </section>
+        <section class="section animated">
+            <h2>Our Services</h2>
+            <p>We offer a comprehensive range of professional plumbing services, including:</p>
+            <ul>
+                <li>
+                    <h3>Bathroom Plumbing</h3>
+                    <ul>
+                        <li>Toilet installation and repair</li>
+                        <li>First and second fix plumbing</li>
+                        <li>Tap and shower installation</li>
+                        <li>Leak detection and repair</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Kitchen Plumbing</h3>
+                    <ul>
+                        <li>Tap installation and repair</li>
+                        <li>Water filter systems</li>
+                        <li>Dishwasher and washing machine installation</li>
+                        <li>Sink and garbage disposal installation</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>General Plumbing Services</h3>
+                    <ul>
+                        <li>Pipe installation and repair</li>
+                        <li>Drain cleaning and unclogging</li>
+                        <li>Water softener installation</li>
+                        <li>Leak detection and repair</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Heating Systems</h3>
+                    <ul>
+                        <li>Boiler installation and repair</li>
+                        <li>Combo and system boiler services</li>
+                        <li>Underfloor heating installation</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Specialized Services</h3>
+                    <ul>
+                        <li>Power flushing</li>
+                        <li>Emergency plumbing repairs</li>
+                        <li>Plumbing system inspections</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="section animated">
+            <h2>Why Choose Us</h2>
+            <ul>
+                <li>Over 10 years of experience in the plumbing industry</li>
+                <li>Team of highly skilled and certified professionals</li>
+                <li>Commitment to quality workmanship and customer satisfaction</li>
+                <li>Comprehensive range of plumbing services</li>
+                <li>Prompt and reliable service</li>
+                <li>Competitive pricing and transparent quotes</li>
+                <li>Use of high-quality materials and modern techniques</li>
+                <li>Fully insured and licensed</li>
+            </ul>
+        </section>
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.style.animation = 'fadeInUp 0.5s ease forwards';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

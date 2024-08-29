@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revised Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1b1b;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #1a1b1b;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            color: #fff;
+        }
+        .review {
+            border-left: 4px solid #f08800;
+            margin-bottom: 20px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            color: #8d8a8a;
+        }
+        .review:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(240,136,0,0.3);
+            color: #f08800;
+        }
+        .review p {
+            margin: 0 0 10px 0;
+        }
+        .review .author {
+            font-weight: bold;
+            color: #f08800;
+        }
+        .animated-title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: center;
+            font-size: 2em;
+            color: #f08800;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif; /* Changed font */
+            font-weight: 700; /* Made it bold */
+            text-transform: uppercase; /* Made it uppercase */
+            letter-spacing: 2px; /* Added letter spacing */
+        }
+        .animated-title span {
+            display: inline-block;
+            animation: slideIn 1.5s forwards;
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+ 
+        <div class="animated-title">
+            <span style="animation-delay: 0.1s;">W</span>
+            <span style="animation-delay: 0.2s;">&</span>
+            <span style="animation-delay: 0.3s;">R</span>
+            <span style="animation-delay: 0.4s;"> </span>
+            <span style="animation-delay: 0.5s;">P</span>
+            <span style="animation-delay: 0.6s;">l</span>
+            <span style="animation-delay: 0.7s;">u</span>
+            <span style="animation-delay: 0.8s;">m</span>
+            <span style="animation-delay: 0.9s;">b</span>
+            <span style="animation-delay: 1.0s;">i</span>
+            <span style="animation-delay: 1.1s;">n</span>
+            <span style="animation-delay: 1.2s;">g</span>
+            <span style="animation-delay: 1.3s;"> </span>
+            <span style="animation-delay: 1.4s;">L</span>
+            <span style="animation-delay: 1.5s;">T</span>
+            <span style="animation-delay: 1.6s;">D</span>
+        </div>
+        <div class="animated-title">
+            <span style="animation-delay: 1.7s;">R</span>
+            <span style="animation-delay: 1.8s;">e</span>
+            <span style="animation-delay: 1.9s;">v</span>
+            <span style="animation-delay: 2.0s;">i</span>
+            <span style="animation-delay: 2.1s;">e</span>
+            <span style="animation-delay: 2.1s;">w</span>
+            <span style="animation-delay: 2.1s;">s</span>
+        </div>
+        <div class="review">
+            <p>"W&R Plumbing LTD provided excellent service. They were prompt, professional, and solved our plumbing issue efficiently. Highly recommended!"</p>
+            <p class="author">- John D.</p>
+        </div>
+        <div class="review">
+            <p>"I was impressed by the knowledge and skill of the W&R Plumbing team. They explained everything clearly and completed the job to a high standard."</p>
+            <p class="author">- Sarah M.</p>
+        </div>
+        <div class="review">
+            <p>"Fast response time and great customer service. W&R Plumbing LTD is now my go-to for all plumbing needs."</p>
+            <p class="author">- Michael R.</p>
+        </div>
+        <div id="external-reviews"></div>
+    </div>
+    <script>
+        // Function to fetch and display reviews from send_feedback.php
+        function fetchExternalReviews() {
+            fetch('https://wrplumming.netlify.app/send_feedback.php')
+                .then(response => response.text())
+                .then(data => {
+                    const externalReviewsContainer = document.getElementById('external-reviews');
+                    const reviewElement = document.createElement('div');
+                    reviewElement.className = 'review';
+                    reviewElement.innerHTML = data;
+                    externalReviewsContainer.appendChild(reviewElement);
+                })
+                .catch(error => console.error('Error fetching reviews:', error));
+        }
+
+        // Call the function when the page loads
+        window.onload = fetchExternalReviews;
+    </script>
+</body>
+</html>
